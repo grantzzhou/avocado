@@ -1,6 +1,10 @@
 """Implementation of avocado components for the PLAsTiCC dataset"""
 
 import numpy as np
+
+import warnings
+np.warnings = warnings
+
 import os
 import pandas as pd
 from scipy.special import erf
