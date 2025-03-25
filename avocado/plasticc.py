@@ -919,7 +919,8 @@ def create_kaggle_predictions(dataset, predictions=None):
         predictions = dataset.predictions
 
     predictions = predictions.copy()
-
+    
+    '''
     if 99 in predictions:
         # Remove old 99 prediction and renormalize
         predictions[99] = 0.0
@@ -947,9 +948,10 @@ def create_kaggle_predictions(dataset, predictions=None):
 
     # For galactic objects, use a flat probability.
     predictions.loc[dataset.metadata["galactic"], 99] = 0.04
+    '''
 
-    norm = np.sum(predictions, axis=1)
-    predictions = predictions.div(norm, axis=0)
+    #norm = np.sum(predictions, axis=1)
+    #predictions = predictions.div(norm, axis=0)
 
     return predictions
 
